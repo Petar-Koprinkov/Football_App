@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Application</title>
+    <link rel="stylesheet" href="{% static 'football/base.css' %}">
+</head>
+<body>
+<div id="box">
+    <header>
+        <nav>
+            <img src="{% static 'images/logo.jpg' %}" alt="football ball">
+            <ul>
+                {% for country in countries %}
+                    <li>
+                        <a href="#">
+                            {{ country.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+                <li><a href="#">FAVOURITE</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <footer>
+        <div>
+            &copy;Petar Koprinkov 2024. All rights reserved.
+        </div>
+    </footer>
+</div>
+</body>
+</html>
