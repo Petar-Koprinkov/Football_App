@@ -14,9 +14,10 @@
             <img src="{% static 'images/logo.jpg' %}" alt="football ball">
             <ul>
                 {% for country in countries %}
-                    <li>
+                    <li id="countries">
                         <a href="#">
                             {{ country.name }}
+                            <img src="{{ country.flag.url }}" alt="{{ country.name }}">
                         </a>
                     </li>
                 {% endfor %}
@@ -24,7 +25,19 @@
             </ul>
         </nav>
     </header>
-    
+    <main>
+        <h2>First place teams of top 5 leagues in Europe</h2>
+        <ul id="teams">
+            {% for team in first_teams %}
+                <li>
+                    <a href="#">
+                        <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
+                        <span>{{ team.name }}</span> 
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
     <footer>
         <div>
             &copy;Petar Koprinkov 2024. All rights reserved.

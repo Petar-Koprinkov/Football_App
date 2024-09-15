@@ -10,6 +10,9 @@ class Countries(models.Model):
         upload_to='flags'
     )
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name_plural = 'Countries'
         verbose_name = 'Country'
@@ -31,6 +34,9 @@ class Championship(models.Model):
         blank=True,
         related_name='championships',
     )
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name_plural = 'Championships'
@@ -61,6 +67,10 @@ class Teams(models.Model):
         blank=True,
         related_name='teams',
     )
+
+    def __str__(self):
+        return self.name
+
 
     class Meta:
         verbose_name_plural = 'Teams'
@@ -99,6 +109,9 @@ class Players(models.Model):
         blank=True,
         related_name='players',
     )
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name_plural = 'Players'
