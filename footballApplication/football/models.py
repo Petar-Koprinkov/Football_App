@@ -48,6 +48,8 @@ class Teams(models.Model):
         max_length=100
     )
 
+    points = models.IntegerField()
+
     position = models.IntegerField()
 
     emblem = models.FileField(
