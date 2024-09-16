@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Football Application</title>
-    <link rel="stylesheet" href="{% static 'football/base.css' %}">
+    <link rel="stylesheet" href="{% static 'football/main.css' %}">
 </head>
 <body>
 <div id="box">
@@ -26,17 +26,33 @@
         </nav>
     </header>
     <main>
-        <h2>First place teams of top 5 leagues in Europe</h2>
-        <ul id="teams">
-            {% for team in first_teams %}
-                <li>
-                    <a href="#">
-                        <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
-                        <span>{{ team.name }}</span> 
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
+        <section>
+            <h1>Top football clubs in Europe</h1>
+            <ul id="teams">
+                {% for team in first_teams %}
+                    <li>
+                        <a href="#">
+                            <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
+                            <span><b>{{ team.name }}</b></span> 
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul> 
+        </section>
+        <section id="leagues">
+            <div>
+                <h2>UEFA Champions League</h2>
+                <h3>Winner:</h3>
+            </div>
+            <div>
+                <h2>UEFA Europa League</h2>
+                <h3>Winner:</h3>
+            </div>
+            <div>
+                <h2>UEFA Conference League</h2>
+                <h3>Winner:</h3>
+            </div>
+        </section>
     </main>
     <footer>
         <div>

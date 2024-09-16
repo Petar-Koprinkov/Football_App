@@ -11,8 +11,8 @@ class HomeView(View):
         first_teams = Teams.objects.filter(position=1)
 
         context = {
-            'countries': countries,
-            'first_teams': first_teams
+            'countries':countries,
+            'first_teams':first_teams
 
         }
 

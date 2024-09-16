@@ -105,20 +105,21 @@ footer div {
 #countries a > img{
     width: 30px;
     margin-left: 7px;
-    justify-content: center;
-    align-content: center;
+    vertical-align: middle;
 }
 
-main h2{
+section h1, h2, h3{
     text-align: center;
     font-size: 35px;
     background-color: cornflowerblue;
     margin: 0;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-main {
+section {
     text-align: center;
+    background-color: cornflowerblue;
 }
 
 #teams {
@@ -126,11 +127,18 @@ main {
     justify-content: center;
     padding: 0;
     list-style-type: none;
+    margin: 0;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
 
 #teams li {
-    margin: 50px;
+    margin: 15px 45px;
     text-align: center;
+}
+
+#teams li:hover span{
+    color: black;
 }
 
 #teams li a {
@@ -149,7 +157,32 @@ main {
 #teams li span {
     display: block;
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 19px;
+    color: white;
 }
+
+#leagues{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 15px 150px;
+    height: 360px;
+}
+
+#leagues div{
+    border: 6px solid white;
+    border-radius: 4px;
+}
+
+#leagues div h2{
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+#leagues div h3{
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
 
 
