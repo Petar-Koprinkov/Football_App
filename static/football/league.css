@@ -4,15 +4,16 @@ table {
       margin: 20px 0;
       font-size: 18px;
       text-align: left;
-    }
+}
+
+tbody td:hover {
+      background-color: #d1e7dd;
+      transition: background-color 0.3s ease;
+}
 
 th, td {
       padding: 12px 15px;
       border: 1px solid #ddd;
-}
-
-tr {
-      background-color: #f8f8f8;
 }
 
 tr:nth-child(even) {
