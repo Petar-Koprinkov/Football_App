@@ -11,11 +11,11 @@
 <div id="box">
     <header>
         <nav>
-            <img src="{% static 'images/logo.jpg' %}" alt="football ball">
+            <a href="{% url 'home' %}"><img src="{% static 'images/logo.jpg' %}" alt="football ball"></a>
             <ul>
                 {% for country in countries %}
                     <li id="countries">
-                        <a href="#">
+                        <a href="{% url 'league' country.name %}">
                             {{ country.name }}
                             <img src="{{ country.flag.url }}" alt="{{ country.name }}">
                         </a>
@@ -25,35 +25,8 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h1>Top football clubs in Europe</h1>
-            <ul id="teams">
-                {% for team in first_teams %}
-                    <li>
-                        <a href="#">
-                            <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
-                            <span><b>{{ team.name }}</b></span> 
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul> 
-        </section>
-        <section id="leagues">
-            <div>
-                <h2>UEFA Champions League</h2>
-                <h3>Winner:</h3>
-            </div>
-            <div>
-                <h2>UEFA Europa League</h2>
-                <h3>Winner:</h3>
-            </div>
-            <div>
-                <h2>UEFA Conference League</h2>
-                <h3>Winner:</h3>
-            </div>
-        </section>
-    </main>
+    {% block content %}
+    {% endblock %}
     <footer>
         <div>
             &copy;Petar Koprinkov 2024. All rights reserved.

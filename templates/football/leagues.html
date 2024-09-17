@@ -1,0 +1,24 @@
+{% extends 'football/base.html' %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <td>Position</td>  
+                <td>#</td>
+                <td>Team</td>
+                <td>Points</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for team in teams %}
+        <tr>
+            <td>{{ team.position }}</td>
+            <td><img src="{{ team.emblem.url }}" alt="{{ team.name }}"></td>
+            <td>{{ team.name }}</td>
+            <td>{{ team.points }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
