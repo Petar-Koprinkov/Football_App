@@ -1,0 +1,67 @@
+.main-article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+
+    background-color: #f4f4f9;
+}
+
+
+.team-container {
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.team-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-emblem {
+    max-width: 100%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1d3557;
+}
+
+.team-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f1f3f6;
+    border-radius: 5px;
+}
+
+.label {
+    font-weight: bold;
+    color: #457b9d;
+}
+
+#team-name, #team-points, #team-position, #team-titles, #team-european-titles, #team-championship {
+    color: #1d3557;
+    font-size: 1.2rem;
+}
+
+

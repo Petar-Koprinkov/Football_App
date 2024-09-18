@@ -1,0 +1,37 @@
+{% extends 'football/base.html' %}
+{% load static %}
+{% block content %}
+    <article class="main-article">
+        <div class="team-container">
+            <div class="team-header">
+                <img id="emblem" src="{{ team.emblem.url }}" alt="Team Emblem" class="team-emblem">
+                <h1 id="team-name">{{ team.name }}</h1>
+            </div>
+            <div class="team-info">
+                <div class="info-box">
+                    <span class="label">Points:{{ team.points }}</span>
+                    <span id="team-points"></span>
+                </div>
+                <div class="info-box">
+                    <span class="label">Position: {{ team.position }}</span>
+                    <span id="team-position"></span>
+                </div>
+                <div class="info-box">
+                    <span class="label">National Titles: {{ team.titles }}</span>
+                    <span id="team-titles"></span>
+                </div>
+                {% if team.european_title %}
+                <div class="info-box">
+                    <span class="label">European Title: {{ team.european_title }}</span>
+                    <span id="team-european-titles"></span>
+                </div>
+                {% endif %}
+                <div class="info-box">
+                    <span class="label">Championship: {{ team.championship }}</span>
+                    <span id="team-championship"></span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+{% endblock %}

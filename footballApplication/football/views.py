@@ -31,3 +31,14 @@ class LeagueView(View):
             "teams": teams
         }
         return render(request, 'football/leagues.html', context)
+
+
+class TeamView(View):
+    def get(self, request, name):
+        team = Teams.objects.get(name=name)
+
+        context = {
+            "team": team
+        }
+
+        return render(request, 'football/team.html', context)

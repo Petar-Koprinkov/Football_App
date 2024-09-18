@@ -14,7 +14,7 @@
         {% for team in teams %}
         <tr>
             <td>{{ team.position }}</td>
-            <td><img src="{{ team.emblem.url }}" alt="{{ team.name }}"></td>
+            <td><a href="{% url 'team' team.name%}"><img src="{{ team.emblem.url }}" alt="{{ team.name }}"></a></td>
             <td>{{ team.name }}</td>
             <td>{{ team.points }}</td>
         </tr>

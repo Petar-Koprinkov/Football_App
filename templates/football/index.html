@@ -1,12 +1,11 @@
 {% extends 'football/base.html' %}
 {% block content %}
-<main>
         <section>
             <h1>Top football clubs in Europe</h1>
             <ul id="teams">
                 {% for team in first_teams %}
                     <li>
-                        <a href="#">
+                        <a href="{% url 'team' team.name%}">
                             <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
                             <span><b>{{ team.name }}</b></span> 
                         </a>
@@ -19,12 +18,11 @@
                 <article>
                     <h2>{{ team.european_title }}</h2>
                     <h3>Winner:</h3>
-                    <a href="#" >
+                    <a href="{% url 'team'  team.name%}" >
                         <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
                         <span><b>{{ team.name }}</b></span> 
                     </a>
                 </article>
             {% endfor %}
         </section>
-</main>
 {% endblock %}
