@@ -18,14 +18,14 @@
     text-align: center;
 }
 
-.inner_button {
+.fav_button {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 40px;
 
 }
 
-.inner_button svg {
+.fav_button svg {
     cursor: pointer;
 }
 
