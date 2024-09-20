@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import ListView
 
@@ -42,3 +42,36 @@ class TeamView(View):
         }
 
         return render(request, 'football/team.html', context)
+
+
+class FavoriteView(View):
+
+    def get(self, request):
+        favourite_teams = request.session.get('favourite_teams')
+        context = {}
+
+        if not favourite_teams:
+            context['favourite_teams'] = []
+            context['is_favourite'] = False
+        else:
+            teams = Teams.objects.filter(id__in=favourite_teams)
+            context['is_favourite'] = True
+            context['favourite_teams'] = teams
+
+        return render(request, 'football/favourite.html', context)
+
+    def post(self, request):
+        favourite_teams = request.session.get('favourite_teams')
+
+        if not favourite_teams or len(favourite_teams) == 0:
+            favourite_teams = []
+
+        team_id = int(request.POST.get('team_id'))
+
+        if team_id not in favourite_teams:
+            favourite_teams.append(team_id)
+        else:
+            favourite_teams.remove(team_id)
+        request.session['favourite_teams'] = favourite_teams
+
+        return redirect('home')

@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
+    {% for team in favourite_teams %}
+        {{ team.name }}
+    {% empty %}
+        <h2>Empty</h2>
+    {% endfor %}
 </body>
 </html>
