@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import ListView
 
 from footballApplication.football.models import Countries, Teams
 
@@ -36,7 +35,7 @@ class LeagueView(View):
 class TeamView(View):
     def get(self, request, name):
         team = Teams.objects.get(name=name)
-        favourite_teams = request.session.get('favourite_teams')
+        favourite_teams = request.session.get('favourite_teams', [])
         is_favourite = team.id in favourite_teams
 
         context = {
@@ -64,10 +63,8 @@ class FavoriteView(View):
         return render(request, 'football/favourite.html', context)
 
     def post(self, request):
-        favourite_teams = request.session.get('favourite_teams')
+        favourite_teams = request.session.get('favourite_teams', [])
 
-        if not favourite_teams or len(favourite_teams) == 0:
-            favourite_teams = []
 
         team_id = int(request.POST.get('team_id'))
 
