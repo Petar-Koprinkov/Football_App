@@ -64,7 +64,7 @@ h1 {
 }
 
 .info-box:hover{
-    background-color: #4CAF50;
+    background-color: palegreen;
 }
 
 .label {
@@ -76,5 +76,3 @@ h1 {
     color: #1d3557;
     font-size: 1.2rem;
 }
-
-
