@@ -2,20 +2,21 @@
 {% block content %}
     <div class="favorites-container">
         <h1>Your Favourite Teams</h1>
-        {% for team in favourite_teams %}
-        <div class="teams-list">
-            <div class="team-card">
-                <img src="{{ team.emblem.url }}" alt="Team Logo" class="team-logo">
-                <div class="team-details">
-                    <h2 class="team-name">{{ team.name }}</h2>
-                    <p>Points: {{ team.points }}</p>
-                    <p>Position: {{ team.position }}</p>
-                    <p>National Titles: {{ team.titles }}</p>
-                    <p>League: {{ team.championship.name }}</p>
+        <div class="teams-list"> 
+            {% for team in favourite_teams %}
+                <a href="{% url 'team' team.name %}">
+                <div class="team-card">
+                    <img src="{{ team.emblem.url }}" alt="Team Logo" class="team-logo">
+                    <div class="team-details">
+                        <h2 class="team-name">{{ team.name }}</h2>
+                        <p>Points: {{ team.points }}</p>
+                        <p>Position: {{ team.position }}</p>
+                        <p>National Titles: {{ team.titles }}</p>
+                        <p>League: {{ team.championship.name }}</p>
+                    </div>
                 </div>
-                <button class="remove-favourite">Remove</button>
-            </div>
-        {% endfor %}    
+                </a>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
