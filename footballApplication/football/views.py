@@ -36,9 +36,12 @@ class LeagueView(View):
 class TeamView(View):
     def get(self, request, name):
         team = Teams.objects.get(name=name)
+        favourite_teams = request.session.get('favourite_teams')
+        is_favourite = team.id in favourite_teams
 
         context = {
-            "team": team
+            "team": team,
+            "is_favourite": is_favourite
         }
 
         return render(request, 'football/team.html', context)
