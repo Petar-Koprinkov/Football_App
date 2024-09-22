@@ -1,7 +1,7 @@
 {% extends 'football/base.html' %}
 {% block content %}
     <div class="favorites-container">
-        <h1>Your Favourite Teams</h1>
+        <h1>Favourite Teams</h1>
         <div class="teams-list"> 
             {% for team in favourite_teams %}
                 <a href="{% url 'team' team.name %}">
