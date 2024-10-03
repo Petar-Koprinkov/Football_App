@@ -1,7 +1,9 @@
 {% extends 'football/base.html' %}
 {% block content %}
         <section>
-            <h1>Top football clubs in Europe</h1>
+            <div id="text-header">
+                <h1>Top football clubs in Europe</h1>
+            </div>
             <ul id="teams">
                 {% for team in first_teams %}
                     <li>
@@ -19,8 +21,10 @@
                     <h2>{{ team.european_title }}</h2>
                     <h3>Winner:</h3>
                     <a href="{% url 'team'  team.name%}" >
-                        <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
-                        <span><b>{{ team.name }}</b></span> 
+                        <div>
+                             <img src="{{ team.emblem.url }}" alt="{{ team.name }} emblem">
+                            <span><b>{{ team.name }}</b></span> 
+                        </div>
                     </a>
                 </article>
             {% endfor %}
