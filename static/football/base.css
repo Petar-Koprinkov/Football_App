@@ -111,105 +111,98 @@ footer div {
     vertical-align: middle;
 }
 
-section h1, h2, h3{
-    text-align: center;
-    font-size: 35px;
-    background-color: cornflowerblue;
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 section {
-    text-align: center;
-    background-color: cornflowerblue;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #teams {
     display: flex;
-    justify-content: center;
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
     flex-wrap: wrap;
-    align-content: space-between;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 }
 
 #teams li {
-    margin: 15px 45px;
-    text-align: center;
-}
-
-#teams li:hover span{
-    color: black;
-}
-
-#teams li a {
-    display: block;
-    text-decoration: none;
-}
-
-#teams li img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-#teams li span {
-    display: block;
-    margin-top: 5px;
-    font-size: 19px;
-    color: white;
-}
-
-#leagues{
+    justify-content: center;
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 15px 150px;
-    height: 360px;
-}
-
-#leagues article{
-    width: 350px;
-    border: 6px solid white;
+    background-color: #ecf0f1;
+    margin: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-#leagues article h2{
-    font-size: 25px;
-    padding: 10px 20px;
+#teams li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-#leagues article h3{
-    font-size: 20px;
-    padding: 10px 20px;
+#teams img {
+    justify-self: center;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
 }
 
-#leagues article a{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#teams a {
+    justify-content: center;
+    display: grid;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+#teams a:hover span {
+    color: #2980b9;
+}
+
+#teams b {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* League section styling */
+#leagues {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#leagues article {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     text-align: center;
 }
 
-#leagues article img{
-    margin: 20px;
-    max-width: 95px;
-    height: 100%;
+#leagues article:hover {
+    transform: translateY(-5px);
 }
 
-#leagues article a{
+#leagues img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+#leagues a {
     text-decoration: none;
-    color: white;
+    color: #333;
 }
 
-#leagues article:hover span{
-    color: black;
+#leagues a:hover {
+    color: #8e44ad;
 }
-
-
-
