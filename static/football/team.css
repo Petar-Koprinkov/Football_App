@@ -1,5 +1,6 @@
 .main-article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 85vh;
@@ -9,6 +10,7 @@
 .team-container {
     position: relative;
     background-color: white;
+    margin-top: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -75,4 +77,81 @@ h1 {
 #team-name, #team-points, #team-position, #team-titles, #team-european-titles, #team-championship {
     color: #1d3557;
     font-size: 1.2rem;
+}
+
+.container-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.comments-form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto 60px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comments:last-child{
+    margin-bottom: 80px;
+}
+
+
+.comments-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments-form form input,
+.comments-form form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.comments-form form button {
+    padding: 10px;
+    background-color: dodgerblue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comments-form form button:hover {
+    background-color: darkblue;
+}
+
+
+.comments {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.comments p {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.comments p:first-child {
+    font-weight: bold;
+}
+
+.comments p:last-child {
+    font-size: 0.8em;
+    color: #777;
 }

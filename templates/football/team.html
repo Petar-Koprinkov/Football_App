@@ -44,6 +44,19 @@
                 </div>
             </div>
         </div>
+        <div class="comments-form">
+            <form action="{% url 'team' team.pk%}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <button>Submit</button>
+            </form>
+        </div>
+        {% for comment in team.comments.all %}
+        <div class="comments">
+                <p>{{ comment.author }}</p>
+                <p>{{ comment.content }}</p>
+                <p>{{ comment.created_at }}</p>
+        </div>
+        {% endfor %}
     </article>
-
 {% endblock %}
