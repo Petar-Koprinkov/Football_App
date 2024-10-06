@@ -1,4 +1,6 @@
+from django.core.validators import MaxLengthValidator
 from django.db import models
+from footballApplication.football.validators import BadLanguageValidator
 
 
 class Countries(models.Model):
@@ -137,7 +139,9 @@ class Comment(models.Model):
         max_length=30,
     )
 
-    content = models.TextField()
+    content = models.TextField(
+        validators=[BadLanguageValidator(['fuck', 'shit'])]
+    )
 
     created_at = models.DateTimeField(
         auto_now_add=True
