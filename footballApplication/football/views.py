@@ -44,7 +44,7 @@ class TeamView(View):
             "form": form,
             "team": team,
             "is_favourite": is_favourite
-        }
+         }
 
         return render(request, 'football/team.html', context)
 
@@ -78,7 +78,6 @@ class FavoriteView(View):
 
     def post(self, request):
         favourite_teams = request.session.get('favourite_teams', [])
-
 
         team_id = int(request.POST.get('team_id'))
 
