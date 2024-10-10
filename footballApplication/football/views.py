@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.views import View
-
 from footballApplication.football.forms import CommentForm
 from footballApplication.football.models import Countries, Teams
 
@@ -44,20 +43,9 @@ class TeamView(View):
             "form": form,
             "team": team,
             "is_favourite": is_favourite,
-         }
+        }
 
         return render(request, 'football/team.html', context)
-
-    # def post(self, request, name):
-    #     team = Teams.objects.get(pk=int(name))
-    #     form = CommentForm(request.POST)
-    #     if form.is_valid():
-    #         if form.cleaned_data:
-    #             comment = form.save(commit=False)
-    #             comment.team = team
-    #             comment.save()
-    #
-    #     return redirect('team', team.name)
 
 
 def comment_functionality(request, name):
@@ -99,4 +87,4 @@ class FavoriteView(View):
             favourite_teams.remove(team_id)
         request.session['favourite_teams'] = favourite_teams
 
-        return redirect('home')
+        return redirect(request.META['HTTP_REFERER'] + f'#{team_id}')
